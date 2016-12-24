@@ -1,0 +1,48 @@
+general {
+    output_format = "none"
+    colors = true
+    color_good = "#ff6347"
+    color_degraded = "#ff6347"
+    color_bad = "#ff6347"
+    interval = 1
+    separator = "  "
+}
+
+order += "tztime local"
+order += "volume master"
+order += "wireless wlp3s0"
+order += "cpu_usage"
+#order += "disk /"
+order += "tztime date"
+
+wireless wlp3s0 {
+   format_up = "%essid"#, %bitrate"
+   align = right
+}
+
+tztime local {
+    format = '%H:%M:%S                                                              '
+    min_width = 1100
+    align = center
+}
+
+tztime date {
+    format = '%d %b'
+    align = left
+}
+
+cpu_usage {
+   format = %usage
+}
+
+volume master {
+        format = "%volume"
+        format_muted = "muted"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+disk "/" {
+	format = "%free"
+}

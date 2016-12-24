@@ -1,0 +1,42 @@
+# vim: set ai et func=ut-8 ft=conf nu si sts=0 sw=4 ts=8 tw=0 :
+
+auto-reload yes
+browser firefox %u
+cleanup-on-quit yes
+download-path "~/Downloads/"
+feed-sort-order title-dec
+max-downloads 4
+player mpv
+refresh-on-startup yes
+reload-time 30
+reload-threads 2
+show-read-articles yes
+show-read-feeds yes
+
+unbind-key h
+unbind-key j
+unbind-key k
+unbind-key l
+unbind-key n
+unbind-key m
+
+bind-key "h" quit
+bind-key "k" down
+bind-key "j" up
+bind-key "l" open-in-browser-and-mark-read
+bind-key "m" pagedown 
+bind-key "," pageup
+bind-key "o" open
+
+ignore-article "*" "title =~ \"Sponsor\""
+ignore-article "*" "title =~ \"Advertisement\""
+ignore-mode "display"
+
+articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
+
+color info              black   color8
+color listnormal_unread color8 default bold
+color listnormal        color8  default
+color listfocus_unread  default  default bold
+color listfocus         white   black   bold
+color article           default default
