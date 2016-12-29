@@ -206,4 +206,9 @@ bindsym XF86AudioPrev exec playerctl previous
 
 bindsym $mod+p exec scrot
 
+# pomodoro
+bindsym $mod+q exec sleep 1500 && notify-send "(25min) time to take a break" 
+bindsym $mod+z exec sleep 300 && notify-send "(5min) back to work"
+# ---
+
 exec xrandr --output VGA-0 --primary --mode 1366x768 --pos 0x0 --rotate normal --output LVDS --mode 1366x768 --pos 1366x0 --rotate normal --output HDMI-0 --off
